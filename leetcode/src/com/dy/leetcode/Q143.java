@@ -58,7 +58,7 @@ public class Q143 {
 		ListNode n4 = new ListNode(4);
 		n1.next = n2;
 		n2.next = n3;
-//		n3.next = n4;
+		n3.next = n4;
 		Q143 q = new Q143();
 		q.reorderList(n1);
 		while(n1 != null){
