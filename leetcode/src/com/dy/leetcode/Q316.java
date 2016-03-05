@@ -1,6 +1,5 @@
 package com.dy.leetcode;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 
@@ -8,15 +7,12 @@ public class Q316 {
 	
 	public static int findMinPos(HashMap<Character, Integer> map){
 		int pos = Integer.MAX_VALUE;
-		char del = ' ';
 		for (char c : map.keySet()) {
 			int x = map.get(c);
 			if(x < pos){
 				pos = x;
-				del = c;
 			}
 		}
-//		map.remove(del);
 		return pos;
 	}
 	
@@ -25,6 +21,8 @@ public class Q316 {
 	 * @param s
 	 * @return
 	 */
+	
+	//"abacb"
 	public String removeDuplicateLetters(String s) {
 		if(s == null || s.length() == 0){
 			return "";
@@ -37,19 +35,33 @@ public class Q316 {
 		int start = 0, end = findMinPos(map);
 		char[] res = new char[map.size()];
 		char min = 'z'+1;
-		for(int k = 0; k < res.length; k++){
+		int curPos = 0;
+		for(int j = 0; j < res.length; j++){
 			for(int i = start; i <= end; i++){
-				if(c[i] < min && map.containsKey(c[i])){
+				if(c[i] <= min && map.containsKey(c[i])){
 					min = c[i];
-					start = i+1;
+					curPos = i;
 				}
 			}
-			res[k] = min;
+			//先remove掉min，后面才可以重新查找
+			res[j] = min;
 			map.remove(min);
+			
 			if(min == c[end]){
+				start = end + 1;
 				end = findMinPos(map);
+			}else{
+				//从刚刚选中的下一个开始
+				start = curPos + 1;
 			}
+			
+			if(end < start){
+				start = end;
+			}
+			//重置min
+			min = 'z'+1;
 		}
+		
 		
 		return new String(res);
 		
@@ -57,7 +69,7 @@ public class Q316 {
 	}
 	public static void main(String[] args) {
 		Q316 q = new Q316();
-		String s = q.removeDuplicateLetters("bbbabdddddcdccc");
+		String s = q.removeDuplicateLetters("abacb");
 		System.out.println(s);
 	}
 }
