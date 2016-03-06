@@ -11,6 +11,7 @@ public class Q332 {
 	public static class Node {
 		String val;
 		ArrayList<String> next;
+		
 
 		public Node(String val) {
 			this.val = val;
