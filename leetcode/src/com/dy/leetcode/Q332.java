@@ -56,13 +56,21 @@ public class Q332 {
 			return;
 		}
 		System.out.println("Cur"+cur.val);
-		for (int i = 0; i < cur.next.size(); i++) {
-			if (!visit.contains(cur.val + cur.next.get(i))) {
-				res.add(cur.next.get(i));
-				visit.add(cur.val + cur.next.get(i));
-				dfs(nodes.get(cur.next.get(i)), visit, res, nodes);
-			}
+//		for (int i = 0; i < cur.next.size(); i++) {
+//			if (!visit.contains(cur.val + cur.next.get(i))) {
+//				res.add(cur.next.get(i));
+//				visit.add(cur.val + cur.next.get(i));
+//				dfs(nodes.get(cur.next.get(i)), visit, res, nodes);
+//			}
+////			System.out.println(nodes.get(cur.next.get(i)).val);
+////			dfs(nodes.get(cur.next.get(i)), visit, res, nodes);
+//		}
+////		res.add(cur.val);
+		
+		for(int i = 0; i < cur.next.size(); i++){
+			dfs(nodes.get(cur.next.get(i)),visit,res,nodes);
 		}
+		res.add(cur.val);
 
 	}
 
