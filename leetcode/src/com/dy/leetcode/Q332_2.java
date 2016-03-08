@@ -26,60 +26,46 @@ public class Q332_2 {
 		if (tickets == null || tickets.length == 0) {
 			return path;
 		}
-		int cnt = 0;
 		for(String[] s : tickets){
 			if(!flights.containsKey(s[0])){
 				flights.put(s[0], new PriorityQueue<String>());
 			}
 			flights.get(s[0]).add(s[1]);
-			cnt++;
 		}
 		
-		Stack<String> stack = new Stack<String>();
-//		dfs(stack,"JFK");
 		
-		Stack<String> tmps = new Stack<String>();
-		Stack<String> finals = new Stack<String>();
+		//http://www.graph-magics.com/articles/euler.php
+		//设置一个退回栈就是circle，存放没有相邻接点的点
+		//1.从开始节点遍历，将每个有相邻接点的点加入到结果集stack中
+		//2.如果当前结点无相邻接点，则将其放入退回栈
+		//3.然后在结果集中逆序选取有相邻接点的点作为当前结点
+		//4.继续123，直到遍历过所有的边
+		//5.最后将结果集并入到退回栈circle中
+		Stack<String> circle = new Stack<String>();
+		Stack<String> stack = new Stack<String>(); 
 		String cur = "JFK";
-		tmps.add(cur);
-		//次数有问题
-		while(cnt >= 0){
-			PriorityQueue<String> next = flights.get(cur);
-			if(next == null || next.size() == 0){
-				finals.add(tmps.pop());
-				cur = tmps.peek();
-			}else{
-				cur = next.poll(); 
-				tmps.add(cur);
+		for(int i = 0; i < tickets.length; i++){
+			while(!flights.containsKey(cur) || flights.get(cur).size() == 0){
+				circle.add(cur);
+				cur = stack.pop();
 			}
-			cnt--;
+			stack.add(cur);
+			cur = flights.get(cur).poll();
 		}
-		while(!tmps.isEmpty()) finals.push(tmps.pop());
-		while(!finals.isEmpty()) path.add(finals.pop());
-		
+		//最后一个节点一定是没有邻接点的点，因此要放到退回栈circle中
+		circle.add(cur);
+		//结果集并入到退回栈中
+		while(!stack.isEmpty()){
+			circle.add(stack.pop());
+		}
+		//退回栈的逆序为最终路径
+		while(!circle.isEmpty()){
+			path.add(circle.pop());
+		}
 		return path;
-		
 	}
 	
-	//http://www.graph-magics.com/articles/euler.php
-	public void dfs(Stack<String> stack, String cur ){
-		//现在栈中添加节点
-		stack.add(cur);
-		while(!stack.empty()){
-			PriorityQueue<String> next = flights.get(cur);
-			//访问其所有邻居
-			while(next != null && !next.isEmpty()){
-				dfs(stack,next.poll());
-			}
-			//如果没有邻居了，就pop，并且逆序添加到队列中
-			if(next == null || next.size() == 0){
-				path.addFirst(stack.pop());
-				return;
-			}
-			
-			
-		}
-	}
+
 
 	
 

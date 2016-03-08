@@ -33,7 +33,7 @@ public class Q332_1 {
 		//访问所有的相邻节点
 		while (arrivals != null && !arrivals.isEmpty())
 			dfs(arrivals.poll());
-		//注意是加到队头？
+		//注意是加到队头！
 		path.addFirst(departure);
 	}
 
