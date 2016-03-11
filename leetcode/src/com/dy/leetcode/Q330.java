@@ -2,42 +2,29 @@ package com.dy.leetcode;
 
 public class Q330 {
 	public int minPatches(int[] nums, int n) {
-		
-		int miss = 0;
-		int sum;
+
+		long miss = 0;
+		long sum = 0;
 		int cnt = 0;
-		if(nums == null ||nums.length == 0){
-			sum = 0;
-			miss = 1;
-			cnt = 1;
-			for(int i = 2; i < n; i++){
-				if(i <= sum || i == sum + 1){
-					sum += i;
-				}else{
-					miss = sum + 1;
-					cnt++;
-				}
-			}
-		}else{
-			sum = nums[0];
-			for(int i = 1; i < nums.length; i++){
-				if(nums[i] <= sum || nums[i] == sum + 1){
-					sum += nums[i];
-				}else{
-					miss = sum + 1;
-					cnt++;
-				}
-				
+		int i = 0;
+
+		while (sum < n) {
+			if (i < nums.length && nums[i] <= sum + 1) {
+				sum += nums[i++];
+			} else {
+				miss = sum + 1;
+				sum += miss;
+				cnt++;
 			}
 		}
-		
-		
+
 		return cnt;
 
 	}
+
 	public static void main(String[] args) {
-		int[] nums = {};
-		int n = 20;
+		int[] nums = { 1, 2, 3 };
+		int n = 2147483647;
 		Q330 q = new Q330();
 		int x = q.minPatches(nums, n);
 		System.out.println(x);
