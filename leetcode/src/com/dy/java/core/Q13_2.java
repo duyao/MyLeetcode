@@ -20,6 +20,7 @@ public class Q13_2 {
 		//Merge the word from b to a
 		//listIterator和iterator是指向两个元素之间的，而不是某一个元素
 		ListIterator<String> aIterator = a.listIterator();
+		//bIterator是Iterator，因此无add方法
 		Iterator<String> bIterator = b.iterator();
 		while(bIterator.hasNext()){
 			if(aIterator.hasNext()){
@@ -36,6 +37,7 @@ public class Q13_2 {
 				bIterator.next();
 				//删除指针左边的元素
 				bIterator.remove();
+				bIterator.remove();
 			}
 			
 		}
@@ -43,7 +45,6 @@ public class Q13_2 {
 		//这里是List的方法，删除a中所有b的元素
 		a.removeAll(b);
 		System.out.println(a);
-		
 		
 	}
 
