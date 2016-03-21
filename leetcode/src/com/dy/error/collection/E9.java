@@ -19,8 +19,13 @@ public class E9 {
 		//i3的valueof会先判断数字是都小于1字节(127)，若小于不产生新对象，大于127则产生新对象
 		System.out.println(i1 == i2);
 		System.out.println(i1 == i3);
+		//24和23何时都相等，因为2是int3是Integer，因为一个是基本类型，一个是封装类
 		System.out.println(i2 == i4);
 		System.out.println(i3 == i4);
+		
+		System.out.println(i2 == i3);
+		//无论何时14不等1与4是不同的对象，因为4被new，虽然他们都是integer
+		System.out.println(i1 == i4);
 
 	}
 

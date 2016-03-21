@@ -37,7 +37,7 @@ public class Q13_2 {
 				bIterator.next();
 				//É¾³ıÖ¸Õë×ó±ßµÄÔªËØ
 				bIterator.remove();
-				bIterator.remove();
+//				bIterator.remove();
 			}
 			
 		}
