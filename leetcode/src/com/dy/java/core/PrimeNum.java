@@ -11,11 +11,14 @@ public class PrimeNum {
 			//初始化，全部置1
 			set.set(i);
 		}
-		for(int i = 2; i < Math.sqrt(set.size()) + 1; i++){
+		for(int i = 2; i * i < set.size(); i++){
 			if(set.get(i)){
-				for(int j = 2 * i; j < set.length(); j += i){
+				for(int j = i + i; j < set.length(); j += i){
 					//素数的倍数全部标记为非素数
 					set.clear(j);
+					if(j == 30){
+						System.out.println(i);
+					}
 					
 				}
 			}
@@ -30,7 +33,7 @@ public class PrimeNum {
 				count ++;
 				if(i < 100){
 					
-					System.out.println(i);
+//					System.out.println(i);
 				}
 			}
 		}
