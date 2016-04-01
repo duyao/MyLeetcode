@@ -17,12 +17,12 @@ public class Q15 {
 		}
 		Arrays.sort(nums);
 		Set<List<Integer>> res = new HashSet<List<Integer>>();
-		// 3²ãÑ­»·
+		// 3²ãÑ­»·,o(n^3)³¬Ê±
 		for (int k = 0; k < nums.length; k++) {
+			HashMap<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
+
 			for (int i = k + 1; i < nums.length; i++) {
-				HashMap<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
-				// Ìí¼Ómap
-				if (i == k+1 || nums[i] != nums[i - 1]) {
+				if (i == k + 1 || nums[i] != nums[i - 1]) {
 					for (int j = i + 1; j < nums.length; j++) {
 						if (j == i + 1 || nums[j] != nums[j - 1]) {
 							int tmp = nums[i] + nums[j];
@@ -33,37 +33,35 @@ public class Q15 {
 							list.add(nums[i]);
 							list.add(nums[j]);
 						}
-
 					}
 
 				}
 
-				//
-				if (map.containsKey(-nums[k])) {
-					List<Integer> tmp = map.get(-nums[i]);
-					for (int j = 0; j < tmp.size(); j += 2) {
-						List<Integer> list = new ArrayList<Integer>();
-						int s = Math.min(tmp.get(j), tmp.get(j + 1));
-						int b = tmp.get(j) == s ? tmp.get(j + 1) : tmp.get(j);
-						if (s > nums[i]) {
-							list.add(nums[i]);
-							list.add(s);
+			}
+			//
+			if (map.containsKey(-nums[k])) {
+				List<Integer> tmp = map.get(-nums[k]);
+				for (int j = 0; j < tmp.size(); j += 2) {
+					List<Integer> list = new ArrayList<Integer>();
+					int s = Math.min(tmp.get(j), tmp.get(j + 1));
+					int b = tmp.get(j) == s ? tmp.get(j + 1) : tmp.get(j);
+					if (s > nums[k]) {
+						list.add(nums[k]);
+						list.add(s);
+						list.add(b);
+					} else {
+						list.add(s);
+						if (b > nums[k]) {
+							list.add(nums[k]);
 							list.add(b);
 						} else {
-							list.add(s);
-							if (b > nums[i]) {
-								list.add(nums[i]);
-								list.add(b);
-							} else {
-								list.add(b);
-								list.add(nums[i]);
-							}
-
+							list.add(b);
+							list.add(nums[k]);
 						}
-						res.add(list);
-					}
-				}
 
+					}
+					res.add(list);
+				}
 			}
 
 		}
@@ -74,7 +72,7 @@ public class Q15 {
 
 	public static void main(String[] args) {
 		Q15 q = new Q15();
-		int[] nums = { 1,0,0,0, 2, -2, -1 };
+		int[] nums = { 1, 0, 0, 0, 2, -2, -1 };
 
 		List<List<Integer>> list = q.threeSum(nums);
 		for (List<Integer> l : list) {
