@@ -56,9 +56,10 @@ public class Q78_1 {
 			
 			
 			
-			//记录本次循环添加的list,一定与res无关，不然cmfe
+			//记录本次循环添加的list,一定与res无关，不然ConcurrentModificationException
 			List<List<Integer>> tmp = new ArrayList<List<Integer>>();
 			for (List<Integer> sub : res) {
+				//对于sub建立副本，不然修改sub，res会改变
 				List<Integer> list = new ArrayList<Integer>(sub);
 				list.add(i);
 				tmp.add(list);
