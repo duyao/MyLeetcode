@@ -18,7 +18,7 @@ public class Q227 {
 		map.put('/', 3);
 		int index = 0;
 		char[] c = s.toCharArray();
-		while (c[index] != '\n') {
+		while (index < c.length) {
 
 			if (c[index] == '+' || c[index] == '-' || c[index] == '*' || c[index] == '/') {
 				int curOp = map.get(c[index]);
@@ -30,10 +30,8 @@ public class Q227 {
 					if (w[curOp][op.peek()] == 1) {
 						//find next num
 						StringBuffer sb = new StringBuffer();
-						while (c[++index] >= '0' && c[index] <= '9' || c[index] == ' ') {
-							if(c[index] == ' '){
-								index++;
-							}else{
+						while (++index < c.length && (c[index] >= '0' && c[index] <= '9' || c[index] == ' ')) {
+							if(c[index] != ' '){
 								sb.append(c[index]);
 							}
 						}
@@ -46,7 +44,7 @@ public class Q227 {
 						int tmp = cal(num.pop(), num.pop(), op.pop());
 						num.push(tmp);
 						op.push(curOp);
-						
+						index++;
 					}
 				}
 				
@@ -54,7 +52,7 @@ public class Q227 {
 				index++;
 			}else{
 				StringBuffer sb = new StringBuffer();
-				while (c[index] >= '0' && c[index] <= '9' || c[index] == ' ') {
+				while (index < c.length && (c[index] >= '0' && c[index] <= '9' || c[index] == ' ')) {
 					if(c[index] == ' '){
 						index++;
 					}else{
@@ -66,7 +64,7 @@ public class Q227 {
 			}
 
 		}
-		while(op.isEmpty()){
+		while(!op.isEmpty()){
 			int x = cal(num.pop(), num.pop(), op.pop());
 			num.push(x);
 		}
@@ -95,7 +93,7 @@ public class Q227 {
 	
 	public static void main(String[] args) {
 		Q227 q = new Q227();
-		String s = "    1    3+2 0 /2- 1 * 55 -4/  2";
+		String s = " 1 3+2 0 /2- 1 * 55 -4/  2- 3 * 0";
 		int x  = q.calculate(s);
 		System.out.println(x);
 	}
