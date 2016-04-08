@@ -1,5 +1,4 @@
 package com.dy.leetcode;
-
 public class Q26 {
 	public int removeDuplicates(int[] nums) {
 		// new length
