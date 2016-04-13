@@ -17,11 +17,8 @@ public class Q120 {
 					x += Math.min(triangle.get(i+1).get(j), triangle.get(i+1).get(j+1));
 					list.set(j, x);
 				}
-				
 			}
-			
 		}
-		
 		return triangle.get(0).get(0);
 	}
 	
