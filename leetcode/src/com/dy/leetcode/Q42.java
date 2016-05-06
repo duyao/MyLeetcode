@@ -2,10 +2,11 @@ package com.dy.leetcode;
 
 public class Q42 {
 	public int trap(int[] height) {
-		// x++;
 		int i = 0;
 		int j = height.length - 1;
+		//记录当前最大高度
 		int curh = 0;
+		//记录每个值的高度
 		int[] res = new int[height.length];
 		while (i <= j) {
 			if (height[i] > height[j]) {
@@ -30,7 +31,6 @@ public class Q42 {
 		for (int k = 0; k < height.length; k++) {
 			cnt += (res[k] - height[k]);
 		}
-		// System.out.println("x->"+x);
 		return cnt;
 
 	}
