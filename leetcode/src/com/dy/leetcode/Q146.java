@@ -3,6 +3,7 @@ package com.dy.leetcode;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Q146 {
@@ -10,7 +11,15 @@ public class Q146 {
 		int value;
 		int cnt;
 	}
-	class 
+	class myComparator implements Comparator<Node>{
+
+		@Override
+		public int compare(Node o1, Node o2) {
+			
+			return Integer.compare(o1.cnt, o2.cnt);
+		}
+		
+	}
 	public static class LRUCache {
 		
 		TreeMap<Integer, Node> map;
@@ -18,9 +27,8 @@ public class Q146 {
 		
 	    public LRUCache(int capacity) {
 	    	this.count = capacity;
-	        map = new TreeMap<Integer,Node>(new Comparator<Node>() {
-	        	if(this)
-			});
+	        map = new TreeMap<Integer,Node>();
+	        
 	        
 	        
 	        
@@ -46,6 +54,11 @@ public class Q146 {
 		map.put(1, map1);
 		map.put(1, map2);
 		System.out.println(map.size());
+	}
+	@Override
+	public int compare(Node o1, Node o2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
