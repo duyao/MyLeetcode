@@ -2,7 +2,7 @@ package com.dy.leetcode;
 
 import java.util.Arrays;
 
-public class Q31 {
+public class Q31_1 {
 	public void nextPermutation(int[] nums) {
 		boolean flag = false;
 		for (int i = nums.length - 1; i > 0; i--) {
@@ -10,35 +10,35 @@ public class Q31 {
 				for (int j = nums.length - 1; j >= i; j--) {
 					// 交换
 					if (nums[i - 1] < nums[j]) {
-						int tmp = nums[i - 1];
-						nums[i - 1] = nums[j];
-						nums[j] = tmp;
+						swap(nums, i-1, j);
 						break;
 					}
 				}
-				// 排序[i-1,nums.length]
-				Arrays.sort(nums, i, nums.length);
+				//reverse
+				reverse(nums, i);
 				flag = true;
 				break;
 			}
 		}
 		if(!flag){
-			//没有找到
-			Arrays.sort(nums);
+			reverse(nums, 0);
+		
 		}
 		for (int i = 0; i < nums.length; i++) {
 			System.out.print(nums[i] + ",");
 		}
 	}
 
-	
-	public static void main(String[] args) {
-		Q31 q = new Q31();
-//		int[] nums = {1,3,2};
-		int[] nums = { 2,3,1 };
-
-		q.nextPermutation(nums);
-
+	public void reverse(int[] a, int s){
+		int e = a.length - 1;
+		while(s < e){
+			swap(a, s++, e--);
+		}
+	}
+	public void swap(int[] nums, int i, int j){
+		int tmp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = tmp;
 	}
 
 }
