@@ -12,12 +12,11 @@ public class Q148 {
 		}
 	}
 	public ListNode sortList(ListNode head) {
-		mergeSort(head);
-		return head;
+		return mergeSort(head);
 
 	}
 
-	public void merge(ListNode a, ListNode b) {
+	public ListNode merge(ListNode a, ListNode b) {
 		System.out.println("==merge a==");
 		myPrint(a);
 		System.out.println("==merge b==");
@@ -45,17 +44,18 @@ public class Q148 {
 			cur = cur.next;
 			b = b.next;
 		}
-		a =  head.next;
-//		System.out.println("==merge result==");
-		myPrint(a);
+//		a =  head.next;
+		System.out.println("==merge result==");
+		myPrint(head.next);
+		return head.next;
 
 	}
 
-	public void mergeSort(ListNode list) {
-		System.out.println("==mergeSort==");
-		myPrint(list);
+	public ListNode mergeSort(ListNode list) {
+//		System.out.println("==mergeSort==");
+//		myPrint(list);
 		if(list == null || list.next == null){
-			return;
+			return list;
 		}
 
 		ListNode a = list;
@@ -66,9 +66,11 @@ public class Q148 {
 		}
 		b = a.next;
 		a.next = null;
-		mergeSort(list);
-		mergeSort(b);
-		merge(list,b);
+		
+		ListNode l1 = mergeSort(list);
+		ListNode l2 =mergeSort(b);
+		
+		return merge(l1,l2);
 
 
 	}
@@ -89,10 +91,10 @@ public class Q148 {
 		head.next = l1;
 		l1.next = l2;
 		l2.next = l3;
-		l3.next = l4;
+//		l3.next = l4;
 		Q148 q = new Q148();
-		head = q.sortList(head);
-		q.myPrint(head);
+		ListNode x = q.sortList(head);
+		q.myPrint(x);
 
 	}
 
