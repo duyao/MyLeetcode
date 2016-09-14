@@ -1,4 +1,4 @@
-package com.dy.error.collection;
+package com.dy.leetcode;
 
 public class Q230 {
 	static class TreeNode {
