@@ -1,3 +1,5 @@
+package com.dy.leetcode;
+
 public class Q394 {
 
 	public static int i = 0;
