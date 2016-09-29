@@ -13,6 +13,7 @@ public class Q101 {
 		public TreeNode(int val) {
 			this.val = val;
 		}
+
 	}
 
 	// public boolean isSymmetric(TreeNode root) {
@@ -153,5 +154,6 @@ public class Q101 {
 		t5.right = t7;
 		//3445**56**6****
 		System.out.println(isSymmetric(root));
+		Math.p
 	}
 }
