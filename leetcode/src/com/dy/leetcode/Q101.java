@@ -154,6 +154,5 @@ public class Q101 {
 		t5.right = t7;
 		//3445**56**6****
 		System.out.println(isSymmetric(root));
-		Math.p
 	}
 }
