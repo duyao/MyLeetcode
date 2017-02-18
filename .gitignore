@@ -1,4 +1,9 @@
 bin/
 .idea/
 out/
-/leetcode/leetcode.iml
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
