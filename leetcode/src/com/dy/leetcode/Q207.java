@@ -42,12 +42,16 @@ public class Q207 {
             int cur = queue.poll();
             vis[cur] = true;
             for (int i = 0; i < g.get(cur).size(); i++) {
+               // int xx = g.get(cur).get(i);
                 int x = --incnt[g.get(cur).get(i)];
                 if (x == 0 && vis[g.get(cur).get(i)] == false) {
                     //添加到队列中
                     queue.add(g.get(cur).get(i));
-                    g.get(cur).remove(i);
+                    //对于下面的case一直不过，直到去掉下面这句
+                    //原因在于一边删除一边访问，删除后节点的size变小，但是i值不变，这样就超过的数组长度，所以后面的就不能访问了
+                    //g.get(cur).remove(g.get(cur).get(i));
                 }
+
 
 
             }
