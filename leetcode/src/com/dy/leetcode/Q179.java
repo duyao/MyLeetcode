@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Q179 {
-	// ÈçºÎÅÅÁĞÄæĞò
-	// ÓĞ´í
+	// å¦‚ä½•æ’åˆ—é€†åº
+	// æœ‰é”™
 	public class cp implements Comparator<String> {
 
 		@Override
@@ -14,7 +14,7 @@ public class Q179 {
 			return -1*(o1+o2).compareTo(o2+o1);
 //			String longS = o1.length() <= o2.length() ? o2 : o1;
 //			String shortS = o1.length() > o2.length() ? o2 : o1;
-//			// ·µ»ØÄæĞò
+//			// è¿”å›é€†åº
 //			int flag = -1;
 //			if (o1 != longS) {
 //				o2 = shortS;
@@ -22,7 +22,7 @@ public class Q179 {
 //				flag = 1;
 //			}
 //
-//			// È¡¶ÌµÄ
+//			// å–çŸ­çš„
 //			// int len = o1.length() >= o2.length() ? o2.length() : o1.length();
 //			for (int i = 0; i < o2.length(); i++) {
 //				if (o1.charAt(i) > o2.charAt(i)) {
@@ -32,7 +32,7 @@ public class Q179 {
 //				}
 //			}
 //
-//			// ±È½ÏÊ£Óà²¿·Ö,{23,234,232}
+//			// æ¯”è¾ƒå‰©ä½™éƒ¨åˆ†,{23,234,232}
 //			int i;
 //			for (i = o2.length(); i < o1.length(); i++) {
 //				if (o1.charAt(i) > o2.charAt(0)) {

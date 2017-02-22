@@ -8,7 +8,7 @@ public class Q13_3 {
 
 	public static void main(String[] args) {
 		SortedSet<Item> mySet = new TreeSet();
-		//ItemÖĞÊÇ°´ÕÕpartNum½øĞĞ±È½ÏµÄ
+		//Itemä¸­æ˜¯æŒ‰ç…§partNumè¿›è¡Œæ¯”è¾ƒçš„
 		mySet.add(new Item("To", 9234));
 		mySet.add(new Item("Wi", 362));
 		mySet.add(new Item("Mo", 1912));
@@ -17,14 +17,14 @@ public class Q13_3 {
 		System.out.println(mySet);
 		
 		
-		//Ê¹ÓÃcomparator£¬ÀàItem¿ÉÒÔÃ»ÓĞÊµÏÖcomparable
-		//ĞÂ½¨TreeSetÍ¨¹ı´«Èë±È½ÏÆ÷comparatorÀ´Íê³É
+		//ä½¿ç”¨comparatorï¼Œç±»Itemå¯ä»¥æ²¡æœ‰å®ç°comparable
+		//æ–°å»ºTreeSeté€šè¿‡ä¼ å…¥æ¯”è¾ƒå™¨comparatoræ¥å®Œæˆ
 		SortedSet<Item> setByDes = new TreeSet<Item>(new Comparator<Item>() {
 
 			
 			@Override
 			public int compare(Item o1, Item o2) {
-				//ÏÈ°´ÕÕdesÅÅĞò£¬¶ÔÓÚÏàµÈµÄdesÔò°´ÕÕpartNumÅÅĞò
+				//å…ˆæŒ‰ç…§desæ’åºï¼Œå¯¹äºç›¸ç­‰çš„desåˆ™æŒ‰ç…§partNumæ’åº
 				String aDes = o1.getDescription();
 				String bDes = o2.getDescription();
 				if(aDes.compareTo(bDes) > 0){
@@ -32,10 +32,10 @@ public class Q13_3 {
 				}else if(aDes.compareTo(bDes) < 0){
 					return -1;
 				}else{
-					//×¢ÒâÇ°ÃæÓĞ·ûºÅ-£¬±íÊ¾ÄæĞò£¬´Ó´óµ½Ğ¡µÄË³Ğò
+					//æ³¨æ„å‰é¢æœ‰ç¬¦å·-ï¼Œè¡¨ç¤ºé€†åºï¼Œä»å¤§åˆ°å°çš„é¡ºåº
 					return -Integer.compare(o1.getPartNum(), o2.getPartNum());
 				}
-				//°´ÕÕdesÅÅĞò£¬¶ÔÓÚdesÏàÍ¬£¬ÔòÖ»ÏÔÊ¾×îĞ¡µÄpartNum
+				//æŒ‰ç…§desæ’åºï¼Œå¯¹äºdesç›¸åŒï¼Œåˆ™åªæ˜¾ç¤ºæœ€å°çš„partNum
 //				return aDes.compareTo(bDes);
 			}
 			

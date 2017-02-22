@@ -16,11 +16,11 @@ public class Q206_1 {
 			return head;
 		}else{
 			ListNode node = reverseList(head.next);
-			//ÕâÀï·´×ªÊ¹ÓÃhead£¬¶ø²»ÊÇnode£¬
-			//node Ö»ÊÇÓÃÀ´·µ»Ø
-			//ÖÃ·´
+			//è¿™é‡Œåè½¬ä½¿ç”¨headï¼Œè€Œä¸æ˜¯nodeï¼Œ
+			//node åªæ˜¯ç”¨æ¥è¿”å›
+			//ç½®å
 			head.next.next = head;
-			//È¥µôÔ­À´µÄÖ¸Õë
+			//å»æ‰åŸæ¥çš„æŒ‡é’ˆ
 			head.next = null;
 			return node;
 		}

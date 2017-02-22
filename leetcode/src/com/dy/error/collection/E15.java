@@ -4,9 +4,9 @@ public class E15 {
 	public static void main(String[] args) {
 		byte b1=1,b2=2,b3,b6; 
 		final byte b4=4,b5=6; 
-		//b4b5ÊÇbyteÏà¼Ó¼ÆËãºóÉıÎªint£¬¶øÆäÊµfinal£¬Òò´Ë±àÒëÊ±¾ÍÒÑ¾­ÊÇ10ÁË
+		//b4b5æ˜¯byteç›¸åŠ è®¡ç®—åå‡ä¸ºintï¼Œè€Œå…¶å®finalï¼Œå› æ­¤ç¼–è¯‘æ—¶å°±å·²ç»æ˜¯10äº†
 		b6=b4+b5; 
-		//b1+b2¼ÆËãÊ±ºòÌáÉıÎªint£¬¶øb3ÊÇbyte²»ÊÇÍ¬Ò»ÀàĞÍ£¬»á±¨´í£¬ĞèÒªÇ¿ÖÆ×ª»»
+		//b1+b2è®¡ç®—æ—¶å€™æå‡ä¸ºintï¼Œè€Œb3æ˜¯byteä¸æ˜¯åŒä¸€ç±»å‹ï¼Œä¼šæŠ¥é”™ï¼Œéœ€è¦å¼ºåˆ¶è½¬æ¢
 		//b3=(b1+b2); 
 //		System.out.println(b3+b6);
 		System.out.println(b6);

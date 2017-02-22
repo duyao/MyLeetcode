@@ -9,10 +9,10 @@ public class Q13_6 {
 //		Map<String, String> map = new HashMap<String, String>();
 		Map<String, String> map = new LinkedHashMap<String, String>(16, 0.75f,
 				false);
-		map.put("apple", "Æ»¹û");
-		map.put("watermelon", "Î÷¹Ï");
-		map.put("banana", "Ïã½¶");
-		map.put("peach", "ÌÒ×Ó");
+		map.put("apple", "è‹¹æœ");
+		map.put("watermelon", "è¥¿ç“œ");
+		map.put("banana", "é¦™è•‰");
+		map.put("peach", "æ¡ƒå­");
 		System.out.println(map);
 		map.get("banana");
 		System.out.println(map);

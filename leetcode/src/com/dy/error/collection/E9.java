@@ -3,8 +3,8 @@ package com.dy.error.collection;
 public class E9 {
 	
 	
-	//×°Ïä¾ÍÊÇ  ×Ô¶¯½«»ù±¾Êý¾ÝÀàÐÍ×ª»»Îª°ü×°Æ÷ÀàÐÍ£»²ðÏä¾ÍÊÇ  ×Ô¶¯½«°ü×°Æ÷ÀàÐÍ×ª»»Îª»ù±¾Êý¾ÝÀàÐÍ¡£
-	//Ö÷ÒªÊÇ¿´µÈºÅ×ó±ßµÄ¶¨ÒåµÄÀàÐÍ
+	//è£…ç®±å°±æ˜¯  è‡ªåŠ¨å°†åŸºæœ¬æ•°æ®ç±»åž‹è½¬æ¢ä¸ºåŒ…è£…å™¨ç±»åž‹ï¼›æ‹†ç®±å°±æ˜¯  è‡ªåŠ¨å°†åŒ…è£…å™¨ç±»åž‹è½¬æ¢ä¸ºåŸºæœ¬æ•°æ®ç±»åž‹ã€‚
+	//ä¸»è¦æ˜¯çœ‹ç­‰å·å·¦è¾¹çš„å®šä¹‰çš„ç±»åž‹
 	public static void main(String[] args) {
 //		Integer i1 = 59;
 //		int i2 = 59;
@@ -14,38 +14,38 @@ public class E9 {
 		int i2 = 111111;
 		Integer i3 = Integer.valueOf(111111);
 		Integer i4 = new Integer(111111);
-		//µ±Îª59Ê±£¬1-3¶¼ÊÇtrue
-		//ÒòÎªjvm¶ÔÓÚÐ¡ÓÚ1×Ö½ÚµÄÒÔÏÂµÄÕûÊý¶¼»á¼ÓÔØ½øÄÚ´æ£¬³ý·ÇÓÃnew Integer()ÏÔÊ¾ÉùÃ÷ÐÂ½¨¶ÔÏó
-		//Òò´Ë1-3¶¼ÊÇÖ¸ÏòÍ¬Ò»¸ö¶ÔÏó,Òò´Ë12Õæ£¬4¼Ù
-		//¶ø3ÊÇ¶ÔÓÚint½øÐÐ±È½ÏÖµµÄ´óÐ¡
-		//µ±Îª111111Ê±£¬13true£¬24false
-		//i3µÄvalueof»áÏÈÅÐ¶ÏÊý×ÖÊÇ¶¼Ð¡ÓÚ1×Ö½Ú(127)£¬ÈôÐ¡ÓÚ²»²úÉúÐÂ¶ÔÏó£¬´óÓÚ127Ôò²úÉúÐÂ¶ÔÏó
+		//å½“ä¸º59æ—¶ï¼Œ1-3éƒ½æ˜¯true
+		//å› ä¸ºjvmå¯¹äºŽå°äºŽ1å­—èŠ‚çš„ä»¥ä¸‹çš„æ•´æ•°éƒ½ä¼šåŠ è½½è¿›å†…å­˜ï¼Œé™¤éžç”¨new Integer()æ˜¾ç¤ºå£°æ˜Žæ–°å»ºå¯¹è±¡
+		//å› æ­¤1-3éƒ½æ˜¯æŒ‡å‘åŒä¸€ä¸ªå¯¹è±¡,å› æ­¤12çœŸï¼Œ4å‡
+		//è€Œ3æ˜¯å¯¹äºŽintè¿›è¡Œæ¯”è¾ƒå€¼çš„å¤§å°
+		//å½“ä¸º111111æ—¶ï¼Œ13trueï¼Œ24false
+		//i3çš„valueofä¼šå…ˆåˆ¤æ–­æ•°å­—æ˜¯éƒ½å°äºŽ1å­—èŠ‚(127)ï¼Œè‹¥å°äºŽä¸äº§ç”Ÿæ–°å¯¹è±¡ï¼Œå¤§äºŽ127åˆ™äº§ç”Ÿæ–°å¯¹è±¡
 		System.out.println(i1 == i2);
 		System.out.println(i1 == i3);
-		//24ºÍ23ºÎÊ±¶¼ÏàµÈ£¬ÒòÎª2ÊÇint3ÊÇInteger£¬ÒòÎªÒ»¸öÊÇ»ù±¾ÀàÐÍ£¬Ò»¸öÊÇ·â×°Àà
+		//24å’Œ23ä½•æ—¶éƒ½ç›¸ç­‰ï¼Œå› ä¸º2æ˜¯int3æ˜¯Integerï¼Œå› ä¸ºä¸€ä¸ªæ˜¯åŸºæœ¬ç±»åž‹ï¼Œä¸€ä¸ªæ˜¯å°è£…ç±»
 		System.out.println(i2 == i4);
 		System.out.println(i3 == i4);
 		
 		System.out.println(i2 == i3);
-		//ÎÞÂÛºÎÊ±14²»µÈ1Óë4ÊÇ²»Í¬µÄ¶ÔÏó£¬ÒòÎª4±»new£¬ËäÈ»ËûÃÇ¶¼ÊÇinteger
+		//æ— è®ºä½•æ—¶14ä¸ç­‰1ä¸Ž4æ˜¯ä¸åŒçš„å¯¹è±¡ï¼Œå› ä¸º4è¢«newï¼Œè™½ç„¶ä»–ä»¬éƒ½æ˜¯integer
 		System.out.println(i1 == i4);
 		
 		
-		//Integer¡¢Short¡¢Byte¡¢Character¡¢LongÕâ¼¸¸öÀàµÄvalueOf·½·¨µÄÊµÏÖÊÇÀàËÆµÄ¡£
-		//Double¡¢FloatµÄvalueOf·½·¨µÄÊµÏÖÊÇÀàËÆµÄ¡£
+		//Integerã€Shortã€Byteã€Characterã€Longè¿™å‡ ä¸ªç±»çš„valueOfæ–¹æ³•çš„å®žçŽ°æ˜¯ç±»ä¼¼çš„ã€‚
+		//Doubleã€Floatçš„valueOfæ–¹æ³•çš„å®žçŽ°æ˜¯ç±»ä¼¼çš„ã€‚
 		Double d1 = 34.0;
 		Double d2 = 34.0;
 		System.out.println("d1 == d2  ->  " + (d1 == d2));
 		
 		
-		//µ± "=="ÔËËã·ûµÄÁ½¸ö²Ù×÷Êý¶¼ÊÇ °ü×°Æ÷ÀàÐÍµÄÒýÓÃ£¬ÔòÊÇ±È½ÏÖ¸ÏòµÄÊÇ·ñÊÇÍ¬Ò»¸ö¶ÔÏó£¬
-		//¶øÈç¹ûÆäÖÐÓÐÒ»¸ö²Ù×÷ÊýÊÇ±í´ïÊ½£¨¼´°üº¬ËãÊõÔËËã£©Ôò±È½ÏµÄÊÇÊýÖµ£¨¼´»á´¥·¢×Ô¶¯²ðÏäµÄ¹ý³Ì£©
+		//å½“ "=="è¿ç®—ç¬¦çš„ä¸¤ä¸ªæ“ä½œæ•°éƒ½æ˜¯ åŒ…è£…å™¨ç±»åž‹çš„å¼•ç”¨ï¼Œåˆ™æ˜¯æ¯”è¾ƒæŒ‡å‘çš„æ˜¯å¦æ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼Œ
+		//è€Œå¦‚æžœå…¶ä¸­æœ‰ä¸€ä¸ªæ“ä½œæ•°æ˜¯è¡¨è¾¾å¼ï¼ˆå³åŒ…å«ç®—æœ¯è¿ç®—ï¼‰åˆ™æ¯”è¾ƒçš„æ˜¯æ•°å€¼ï¼ˆå³ä¼šè§¦å‘è‡ªåŠ¨æ‹†ç®±çš„è¿‡ç¨‹ï¼‰
 		Long ll = 3l;
 		int a = 1;
 		int b = 2;
 //		long b = 2;
 		System.out.println(ll == (a + b));
-		//¶ÔÓÚ°ü×°Æ÷ÀàÐÍ£¬equals·½·¨²¢²»»á½øÐÐÀàÐÍ×ª»»,±È½ÏÊÇ·ñÀàÐÍÏàÍ¬
+		//å¯¹äºŽåŒ…è£…å™¨ç±»åž‹ï¼Œequalsæ–¹æ³•å¹¶ä¸ä¼šè¿›è¡Œç±»åž‹è½¬æ¢,æ¯”è¾ƒæ˜¯å¦ç±»åž‹ç›¸åŒ
 		System.out.println(ll.equals(a + b));
 		
 
