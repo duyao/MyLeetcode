@@ -71,23 +71,6 @@ public class Q210 {
 
     }
 
-    public String[] toArray(List<String> list){
-        String [] strings = new String[list.size()];
-        return  list.toArray(strings);
-    }
-    public List<String> toArray(String[] strings){
-        return  Arrays.asList(strings);
-    }
-
-    public int[] toArray(List<Integer> list){
-        int [] ints = new int[list.size()];
-        //toArray (java.lang.Object[]) in List cannot be applied to (int[])
-        return  list.toArray(ints);
-
-        Integer [] ints = new Integer[list.size()];
-        ////toArray (T[]) in List cannot be applied to (Integer[])
-        return  list.toArray(ints);
-    }
 
 
 
@@ -95,9 +78,6 @@ public class Q210 {
         Q210 q = new Q210();
         int[][] r = {{0,1}};
         q.findOrder(2,r);
-
-
-
 
 
     }
