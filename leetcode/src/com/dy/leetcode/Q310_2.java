@@ -28,13 +28,13 @@ public class Q310_2 {
 	    
 	    while(n > 2){
 	    	n -= leaves.size();
-	    	//ÁÙÊ±´æ·ÅÏÂ´ÎÒª±éÀúµÄÒ¶×Ó
+	    	//ä¸´æ—¶å­˜æ”¾ä¸‹æ¬¡è¦éå†çš„å¶å­
 	    	ArrayList<Integer> tleaves = new ArrayList<Integer>();
  	    	for (Integer cur : leaves) {
- 	    		//±éÀúÒ¶×Ó¶ÓÁĞÖĞµÄµã
+ 	    		//éå†å¶å­é˜Ÿåˆ—ä¸­çš„ç‚¹
 				for (Integer edge : adj.get(cur)) {
 					adj.get(edge).remove(cur);
-					//´Î±éÀú¹ı³ÌÖĞµÄÁÚ½Ó±ß£¬ÇÒ¸Ä±äµÄÁÚ½Ó±ß¸öÊıÎª1£¬Ìí¼Óµ½ÏÂ´ÎµÄÒ¶×Ó¶ÓÁĞÖĞ
+					//æ¬¡éå†è¿‡ç¨‹ä¸­çš„é‚»æ¥è¾¹ï¼Œä¸”æ”¹å˜çš„é‚»æ¥è¾¹ä¸ªæ•°ä¸º1ï¼Œæ·»åŠ åˆ°ä¸‹æ¬¡çš„å¶å­é˜Ÿåˆ—ä¸­
 					if(adj.get(edge).size() == 1){
 						tleaves.add(edge);
 					}

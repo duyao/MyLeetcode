@@ -75,7 +75,7 @@ public class Q310_1 {
 				for (Integer value : node.next) {
 					Node tmp = map.get(value);
 					tmp.next.remove(node.value);
-					//¶ÔÓÚvisµÄ¸üĞÂ²ßÂÔ²»ÊÇÁÚ¾Ó¾Í±éÀú£¬¶øÊÇÃ¿´ÎÌôÑ¡Ö»ÓĞ1ÌõÁÚ±ßµÄ±éÀú
+					//å¯¹äºvisçš„æ›´æ–°ç­–ç•¥ä¸æ˜¯é‚»å±…å°±éå†ï¼Œè€Œæ˜¯æ¯æ¬¡æŒ‘é€‰åªæœ‰1æ¡é‚»è¾¹çš„éå†
 					if (!visit.contains(tmp)) {
 						visit.add(tmp);
 					}

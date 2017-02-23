@@ -56,7 +56,7 @@ public class Q310 {
 		}
 		System.out.println("map.values().size()=" + map.values().size());
 //		TreeSet<Node> treeSet = new TreeSet<Node>(map.values());
-		//ÓĞµÄ½ÚµãÌí¼Ó²»½øÈ¥£¬Ã÷Ã÷ÖØĞ´hashcodeºÍequal°¡£¡£¡£¡£¡
+		//æœ‰çš„èŠ‚ç‚¹æ·»åŠ ä¸è¿›å»ï¼Œæ˜æ˜é‡å†™hashcodeå’Œequalå•Šï¼ï¼ï¼ï¼
 		TreeSet<Node> treeSet = new TreeSet<Node>();
 		for (Node node : map.values()) {
 			if(treeSet.contains(node)){
