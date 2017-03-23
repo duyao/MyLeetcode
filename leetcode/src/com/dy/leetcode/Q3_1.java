@@ -8,7 +8,7 @@ public class Q3_1 {
 		int max = 0;
 		for(int i = 0, j = 0; i < s.length(); i++){
 			if(map.containsKey(s.charAt(i))){
-				//Ïàµ±ÓÚsubstring
+				//ç›¸å½“äºŽsubstring
 				j = Math.max(j, map.get(s.charAt(i))+1);
 			}
 			map.put(s.charAt(i), i);

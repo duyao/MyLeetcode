@@ -1,21 +1,27 @@
 package com.dy.leetcode;
 
 public class Q334 {
-	public String reverseString(String s) {
-        if(s == null ){
-            return s;
+    public static boolean increasingTriplet(int[] nums) {
+        int a = Integer.MAX_VALUE;
+        int b = Integer.MAX_VALUE;
+
+        for (int x :
+                nums) {
+            if (x < a) {
+                a = x;
+            } else if (x < b) {
+                b = x;
+            } else {
+                return true;
+            }
         }
-        int i = 0;
-        int j = s.length()-1;
-        char[] c = s.toCharArray();
-        while(i < j){
-            char tmp = c[i];
-            c[i] = c[j];
-            c[j] = tmp;
-            i++;
-            j--;
-        }
-        return new String(c);
+        return false;
+
+    }
+
+    public static void main(String[] args) {
+        int a[] = {3, 5, 1, 6};
+        System.out.println(increasingTriplet(a));
     }
 
 }

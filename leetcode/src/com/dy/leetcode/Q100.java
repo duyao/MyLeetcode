@@ -1,7 +1,8 @@
 package com.dy.leetcode;
 
 public class Q100 {
-	public static class TreeNode {
+	public static class
+	TreeNode {
 		int val;
 		TreeNode left;
 		TreeNode right;
@@ -20,7 +21,7 @@ public class Q100 {
 		sBuffer.append(root.val);
 		sBuffer.append(travel(root.left));
 		sBuffer.append(travel(root.right));
-		//´Ë´¦²»ÓÃÅÐ¶Ï×ÓÊ÷ÊÇ·ñÎª¿Õ£¬ÒòÎª¼ÌÐø×ßÏÂÈ¥£¬´«Èë¿ÕÊ÷Ö±½Ó·µ»Ø£¬ÓësBuffer.append(travel(root.left))ÏàÍ¬
+		//ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½Ø£ï¿½ï¿½ï¿½sBuffer.append(travel(root.left))ï¿½ï¿½Í¬
 //		if (root.left == null) {
 //			sBuffer.append("*");
 //		} else {

@@ -8,13 +8,13 @@ public class Q130 {
 	static class Node{
 		int x;
 		int y;
-		//¼ÇÂ¼×ø±êĞÅÏ¢£¬²»ĞèÒªÉèÖÃ·ÃÎÊÖµ£¬ÒòÎª±»·ÃÎÊºóµÄÖµ»á±»¸Ä±ä
+		//è®°å½•åæ ‡ä¿¡æ¯ï¼Œä¸éœ€è¦è®¾ç½®è®¿é—®å€¼ï¼Œå› ä¸ºè¢«è®¿é—®åçš„å€¼ä¼šè¢«æ”¹å˜
 		Node(int x, int y){
 			this.x = x;
 			this.y = y;
 		}
 	}
-	//Ö»·ÃÎÊ±ß½çµÄ×ø±ê£¬½«±ß½ç×ø±êoÖÃÎªb£¬ÇÒÆäÏàÁÚµÄoÒ²±éÀúÖÃÎªb
+	//åªè®¿é—®è¾¹ç•Œçš„åæ ‡ï¼Œå°†è¾¹ç•Œåæ ‡oç½®ä¸ºbï¼Œä¸”å…¶ç›¸é‚»çš„oä¹Ÿéå†ç½®ä¸ºb
 	public void bfsBoundary(char[][] c, int x, int y,boolean[][] in){
 		int len = c[0].length;
 		int wid = c.length;
@@ -50,7 +50,7 @@ public class Q130 {
 		boolean[][] in = new boolean[board.length][board[0].length];
 		int len = board[0].length;
 		int wid = board.length;
-		//·ÃÎÊ±ßÔµ
+		//è®¿é—®è¾¹ç¼˜
 		for(int i = 0; i <len; i++){
 			if(board[0][i] == 'O'){
 				bfsBoundary(board, 0, i, in);
@@ -67,7 +67,7 @@ public class Q130 {
 				bfsBoundary(board, i, len-1, in);
 			}
 		}
-		//Ë³Ğò·ÃÎÊ
+		//é¡ºåºè®¿é—®
 		for(int i = 0; i < wid; i++){
 			for(int j = 0; j < len; j++){
 				if(board[i][j] == 'b'){
