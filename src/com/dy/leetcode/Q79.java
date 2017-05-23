@@ -47,21 +47,21 @@ public class Q79 {
 		if (w.length == 1) {
 			return true;
 		}
-		// ÔÚ¸ÃÆðµãÊÇ·ñÕÒµ½ÖÕµã
+		// ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Òµï¿½ï¿½Õµï¿½
 		boolean b = false;
 		for (node n : list) {
 			node cur = n;
-			// ÔÚÖÜÎ§ÊÇ·ñÕÒµ½×Ö·ûw[j]
+			// ï¿½ï¿½ï¿½ï¿½Î§ï¿½Ç·ï¿½ï¿½Òµï¿½ï¿½Ö·ï¿½w[j]
 			boolean t = false;
-			List<node> path = new ArrayList<Q79.node>();
+			List<node> path = new ArrayList<node>();
 			for (int j = 1; j < w.length; j++) {
-				// ÖÜÎ§ÕÒ
+				// ï¿½ï¿½Î§ï¿½ï¿½
 				for (int i = 0; i < y.length; i++) {
 					int curx = cur.x + x[i];
 					int cury = cur.y + y[i];
 					if (curx >= 0 && curx < c.length && cury >= 0
 							&& cury < c[0].length && c[curx][cury] == w[j]) {
-						// ·ÀÖ¹½ÚµãÖØ¸´£¬{"aa"},"aaaa"
+						// ï¿½ï¿½Ö¹ï¿½Úµï¿½ï¿½Ø¸ï¿½ï¿½ï¿½{"aa"},"aaaa"
 						// if(visit.isEmpty() || visit.contains(o))
 						t = true;
 						cur = new node(curx, cury);
@@ -75,7 +75,7 @@ public class Q79 {
 					b = false;
 					break;
 				} else {
-					// ÖØÖÃ£¬ÕÒÏÂÒ»ÖÜ
+					// ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 					t = false;
 					if (j == w.length - 1) {
 						b = true;
@@ -84,20 +84,20 @@ public class Q79 {
 				}
 			}
 			if (!b) {
-				// ÖØÖÃ£¬ÕÒÏÂÒ»¸öÆðµã
+				// ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½
 				b = false;
 				System.out.println(path);
-				path = new ArrayList<Q79.node>();
+				path = new ArrayList<node>();
 
 			} else {
-				// ÕÒµ½ÁËËùÓÐ·µ»Ø
+				// ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½
 				return b;
 			}
 
 		}
 
 		System.out.println("B" + b);
-		// ÕÒ±éËùÓÐ£¬¶¼Ã»ÓÐ
+		// ï¿½Ò±ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ã»ï¿½ï¿½
 		return b;
 	}
 
@@ -105,7 +105,7 @@ public class Q79 {
 		// char[][] board = { { 'A', 'B', 'C', 'E' }, { 'S', 'C', 'C', 'S' },
 		// { 'A', 'D', 'E', 'E' } };
 		// String word = "ABCCED";
-		//ÖØ¸´Ã»ÓÐ½â¾ö
+		//ï¿½Ø¸ï¿½Ã»ï¿½Ð½ï¿½ï¿½
 		char[][] board = { { 'a', 'a' } };
 		String word = "aaa";
 		Q79 q = new Q79();

@@ -42,8 +42,8 @@ public class Q129_3 {
     }
     public static void main(String[] args) {
         //[3,4,4,5,null,6,5,6,null,null,null]
-        Q100.TreeNode root = new Q100.TreeNode(0);
-        Q100.TreeNode t2 = new Q100.TreeNode(1);
+        TreeNode root = new TreeNode(0);
+        TreeNode t2 = new TreeNode(1);
 //        TreeNode t3 = new TreeNode(0);
 //        TreeNode t4 = new TreeNode(0);
 //        TreeNode t5 = new TreeNode(0);
