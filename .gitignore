@@ -1,9 +1,10 @@
-bin/
-.idea/
-out/
-
-### IntelliJ IDEA ###
+target
+bin
+.settings
+.project
+.classpath
 .idea
-*.iws
+.DS_Store
 *.iml
-*.ipr
+/.idea
+/out
